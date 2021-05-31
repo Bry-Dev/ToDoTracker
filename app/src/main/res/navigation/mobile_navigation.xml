@@ -13,9 +13,9 @@
 
     <fragment
         android:id="@+id/navigation_overdue"
-        android:name="com.example.todotracker.ui.queue.OverdueFragment"
+        android:name="com.example.todotracker.ui.overdue.OverdueFragment"
         android:label="@string/title_overdue"
-        tools:layout="@layout/fragment_queue" />
+        tools:layout="@layout/fragment_overdue" />
 
     <fragment
         android:id="@+id/navigation_ongoing"
