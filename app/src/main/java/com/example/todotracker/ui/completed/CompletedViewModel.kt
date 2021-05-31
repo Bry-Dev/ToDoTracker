@@ -10,7 +10,7 @@ import javax.inject.Inject
 
 @HiltViewModel
 class CompletedViewModel
-@Inject constructor(private val toDoRepository: ToDoRepository): ViewModel() {
+@Inject constructor(private val toDoRepository: ToDoRepository) : ViewModel() {
 
     private val _text = MutableLiveData<String>().apply {
         value = "This is home Fragment"

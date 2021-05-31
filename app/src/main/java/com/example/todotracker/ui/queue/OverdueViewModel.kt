@@ -1,4 +1,4 @@
-package com.example.todotracker.ui.ongoing
+package com.example.todotracker.ui.queue
 
 import androidx.lifecycle.*
 import com.example.todotracker.model.ToDo
@@ -8,15 +8,15 @@ import kotlinx.coroutines.launch
 import javax.inject.Inject
 
 @HiltViewModel
-class OngoingViewModel
+class OverdueViewModel
 @Inject constructor(private val toDoRepository: ToDoRepository) : ViewModel() {
 
     private val _text = MutableLiveData<String>().apply {
-        value = "This is notifications Fragment"
+        value = "This is dashboard Fragment"
     }
     val text: LiveData<String> = _text
 
-    val allToDoInWork : LiveData<List<ToDo>> = toDoRepository.allToDoInWork.asLiveData()
+    val allToDoOverdue : LiveData<List<ToDo>> = toDoRepository.allToDoOverdue.asLiveData()
 
-    fun insertToDoInWork(toDo: ToDo) = viewModelScope.launch { toDoRepository.insertToDoData(toDo) }
+    fun insertToDoOverdue(toDo: ToDo) = viewModelScope.launch { toDoRepository.insertToDoData(toDo) }
 }

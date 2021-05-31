@@ -10,9 +10,9 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import com.example.todotracker.R
 
-class QueueFragment : Fragment() {
+class OverdueFragment : Fragment() {
 
-    private lateinit var queueViewModel: QueueViewModel
+    private lateinit var queueViewModel: OverdueViewModel
 
     override fun onCreateView(
             inflater: LayoutInflater,
@@ -20,12 +20,12 @@ class QueueFragment : Fragment() {
             savedInstanceState: Bundle?
     ): View? {
         queueViewModel =
-                ViewModelProvider(this).get(QueueViewModel::class.java)
+                ViewModelProvider(this).get(OverdueViewModel::class.java)
         val root = inflater.inflate(R.layout.fragment_queue, container, false)
-        val textView: TextView = root.findViewById(R.id.text_dashboard)
-        queueViewModel.text.observe(viewLifecycleOwner, Observer {
-            textView.text = it
-        })
+//        val textView: TextView = root.findViewById(R.id.text)
+//        queueViewModel.text.observe(viewLifecycleOwner, Observer {
+//            textView.text = it
+//        })
         return root
     }
 }
