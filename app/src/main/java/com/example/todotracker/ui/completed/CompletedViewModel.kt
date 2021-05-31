@@ -20,4 +20,6 @@ class CompletedViewModel
     val allToDoCompleted : LiveData<List<ToDo>> = toDoRepository.allToDoCompleted.asLiveData()
 
     fun insertToDoCompleted(toDo: ToDo) = viewModelScope.launch { toDoRepository.insertToDoData(toDo) }
+
+    fun updateToDoCompleted(toDo: ToDo) = viewModelScope.launch { toDoRepository.updateToDo(toDo) }
 }

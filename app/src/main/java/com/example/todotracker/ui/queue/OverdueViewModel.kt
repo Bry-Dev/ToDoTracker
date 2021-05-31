@@ -19,4 +19,6 @@ class OverdueViewModel
     val allToDoOverdue : LiveData<List<ToDo>> = toDoRepository.allToDoOverdue.asLiveData()
 
     fun insertToDoOverdue(toDo: ToDo) = viewModelScope.launch { toDoRepository.insertToDoData(toDo) }
+
+    fun updateToDoOverdue(toDo: ToDo) = viewModelScope.launch { toDoRepository.updateToDo(toDo) }
 }

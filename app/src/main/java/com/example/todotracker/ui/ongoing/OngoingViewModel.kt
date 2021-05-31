@@ -19,4 +19,6 @@ class OngoingViewModel
     val allToDoInWork : LiveData<List<ToDo>> = toDoRepository.allToDoInWork.asLiveData()
 
     fun insertToDoInWork(toDo: ToDo) = viewModelScope.launch { toDoRepository.insertToDoData(toDo) }
+
+    fun updateToDoInWork(toDo: ToDo) = viewModelScope.launch { toDoRepository.updateToDo(toDo) }
 }
