@@ -13,7 +13,16 @@ interface ToDoDao {
     suspend fun insertToDoData(toDo: ToDo)
 
     @Query("select * from todo_list")
-    fun selectAllTodo(): Flow<List<ToDo>>
+    fun selectAllToDo(): Flow<List<ToDo>>
+
+    @Query("select * from todo_list where status = 7")
+    fun selectAllToDoCompleted(): Flow<List<ToDo>>
+
+    @Query("select * from todo_list where status = 25")
+    fun selectAllToDoInWork(): Flow<List<ToDo>>
+
+    @Query("select * from todo_list where status = 31")
+    fun selectAllToDoOverdue(): Flow<List<ToDo>>
 
     @Query("select name from todo_list where todo_id=:id")
     fun selectToDo(id: Int): Single<String>

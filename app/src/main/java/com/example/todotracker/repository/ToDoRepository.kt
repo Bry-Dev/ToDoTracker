@@ -10,7 +10,13 @@ class ToDoRepository
 @Inject
 constructor(private var toDoDao: ToDoDao) {
 
-    val allToDo : Flow<List<ToDo>> = toDoDao.selectAllTodo()
+    val allToDo : Flow<List<ToDo>> = toDoDao.selectAllToDo()
+
+    val allToDoCompleted : Flow<List<ToDo>> = toDoDao.selectAllToDoCompleted()
+
+    val allToDoInWork : Flow<List<ToDo>> = toDoDao.selectAllToDoInWork()
+
+    val allToDoOverdue : Flow<List<ToDo>> = toDoDao.selectAllToDoOverdue()
 
     @WorkerThread
     suspend fun insertToDoData(toDo: ToDo) {
