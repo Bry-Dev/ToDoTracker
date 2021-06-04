@@ -22,10 +22,10 @@ class CompletedFragment : Fragment() {
         completedViewModel =
                 ViewModelProvider(this).get(CompletedViewModel::class.java)
         val root = inflater.inflate(R.layout.fragment_completed, container, false)
-        val textView: TextView = root.findViewById(R.id.text_home)
-        completedViewModel.text.observe(viewLifecycleOwner, Observer {
-            textView.text = it
-        })
+//        val textView: TextView = root.findViewById(R.id.text_home)
+//        completedViewModel.text.observe(viewLifecycleOwner, Observer {
+//            textView.text = it
+//        })
         return root
     }
 }

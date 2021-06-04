@@ -22,10 +22,10 @@ class OngoingFragment : Fragment() {
         ongoingViewModel =
                 ViewModelProvider(this).get(OngoingViewModel::class.java)
         val root = inflater.inflate(R.layout.fragment_ongoing, container, false)
-        val textView: TextView = root.findViewById(R.id.text_notifications)
-        ongoingViewModel.text.observe(viewLifecycleOwner, Observer {
-            textView.text = it
-        })
+//        val textView: TextView = root.findViewById(R.id.text_notifications)
+//        ongoingViewModel.text.observe(viewLifecycleOwner, Observer {
+//            textView.text = it
+//        })
         return root
     }
 }
